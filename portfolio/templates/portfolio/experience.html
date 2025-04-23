@@ -1,0 +1,72 @@
+{% extends "portfolio/base.html" %}
+{% block title %}Expériences{% endblock %}
+
+{% block content %}
+<section class="container mx-auto py-16 px-6">
+  <h2 class="text-4xl font-bold text-center mb-10">Expériences Professionnelles</h2>
+
+  <div class="space-y-10">
+
+    <!-- Ajout de l'expérience Responsable du Club ITIRC -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border">
+        <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+          <h3 class="text-xl font-bold text-gray-800">Responsable du Club ITIRC</h3>
+          <span class="text-sm text-gray-500">Octobre 2024 – Présent</span>
+        </div>
+        <div class="flex items-center gap-3 mb-2 text-sm text-gray-600">
+          <i data-lucide="users" class="w-4 h-4 text-blue-700"></i>
+          <span>Maison des Sciences d’Oujda</span>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          En tant que responsable du Club ITIRC, j’ai piloté plusieurs projets pédagogiques et techniques à destination des jeunes et du grand public. Mes responsabilités incluaient :
+        </p>
+        <ul class="list-disc pl-6 text-gray-700 mb-4">
+          <li>💡 Conception de maquettes interactives autour des thématiques de la maison intelligente, gestion de l’énergie et surveillance de climat.</li>
+          <li>🧑‍🏫 Organisation d’ateliers éducatifs, dont une formation à l’École sur l’Internet des Objets (IoT) et l’intelligence artificielle (mars 2025).</li>
+          <li>🤝 Animation de séances collaboratives et vulgarisation scientifique pour faciliter la compréhension des technologies émergentes.</li>
+        </ul>
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2">Compétences développées :</h4>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-y-2 text-sm text-gray-700">
+            <li class="flex items-center gap-2"><span class="text-blue-600">&#x1F465;</span>Leadership et gestion des ressources humaines</li>
+            <li class="flex items-center gap-2"><span class="text-orange-600">&#x1F6E0;</span>Gestion de projet pédagogique et technique</li>
+            <li class="flex items-center gap-2"><span class="text-purple-600">&#x1F9E0;</span>Initiation à l’IA avec des outils ludiques</li>
+            <li class="flex items-center gap-2"><span class="text-teal-600">&#x1F91D;</span>Travail en équipe et coordination d’événements</li>
+            <li class="flex items-center gap-2"><span class="text-red-600">&#x1F4E2;</span>Communication et vulgarisation scientifique</li>
+            <li class="flex items-center gap-2"><span class="text-yellow-600">&#x1F4F1;</span>Conception de maquettes IoT avec Arduino et esp32</li>
+          </ul>          
+        </div>
+      </div>
+
+    <!-- Exemple avec une expérience RGPH 2024 (statique ici, peut être dynamique aussi) -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border">
+      <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+        <h3 class="text-xl font-bold text-gray-800">Enquêteur – RGPH 2024</h3>
+        <span class="text-sm text-gray-500">Août – Septembre 2024 · Temps plein</span>
+      </div>
+      <div class="flex items-center gap-3 mb-2 text-sm text-gray-600">
+        <i data-lucide="building" class="w-4 h-4 text-blue-700"></i>
+        <span>Haut-Commissariat au Plan (HCP) · Oujda, Maroc</span>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Participation au Recensement Général de la Population et de l'Habitat 2024 dans la préfecture d’Oujda-Angad.
+        Collecte de données démographiques et socio-économiques auprès des ménages, avec rigueur et communication.
+      </p>
+      <div>
+        <h4 class="font-semibold text-gray-800 mb-2">Compétences développées :</h4>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-y-2 text-sm text-gray-700">
+          <li class="flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 text-green-600"></i>Communication interpersonnelle</li>
+          <li class="flex items-center gap-2"><i data-lucide="ear" class="w-4 h-4 text-green-600"></i>Écoute active</li>
+          <li class="flex items-center gap-2"><i data-lucide="database" class="w-4 h-4 text-green-600"></i>Gestion des données</li>
+          <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-green-600"></i>Travail en équipe</li>
+          <li class="flex items-center gap-2"><i data-lucide="wrench" class="w-4 h-4 text-green-600"></i>Résolution de problèmes</li>
+          <li class="flex items-center gap-2"><i data-lucide="shuffle" class="w-4 h-4 text-green-600"></i>Adaptabilité</li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+<!-- Chargement des icônes Lucide -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+{% endblock %}

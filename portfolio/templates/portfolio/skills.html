@@ -1,0 +1,37 @@
+{% extends "portfolio/base.html" %}
+{% block title %}Compétences{% endblock %}
+{% block content %}
+<section class="container mx-auto py-16 px-6">
+    <h2 class="text-4xl font-semibold text-center mb-6">Mes Compétences</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+            <div class="text-6xl mb-4">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Développement Web</h3>
+            <p class="text-lg">HTML, CSS, Django, PHP, C++, JAVA, PYTHON</p>
+        </div>
+        <div class="text-center">
+            <div class="text-6xl mb-4">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Cybersécurité</h3>
+            <p class="text-lg">Analyse des vulnérabilités, Sécurisation des réseaux, Active Directory Pentesting</p>
+        </div>
+        <div class="text-center">
+            <div class="text-6xl mb-4">
+                <i class="fas fa-database"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Bases de données</h3>
+            <p class="text-lg">SQL, MySQL</p>
+        </div>
+        <div class="text-center">
+            <div class="text-6xl mb-4">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Cloud & DevOps</h3>
+            <p class="text-lg"></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

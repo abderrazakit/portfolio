@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    
+    <!-- Liens CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <!-- Inclure ici une font moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Liens pour d'autres ressources si besoin -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4 fixed w-full top-0 left-0 shadow-md z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-semibold">HAJJI ABDERRAZAK</a>
+            <ul class="flex space-x-8">
+                <li><a href="/" class="hover:text-yellow-500">Accueil</a></li>
+                <li><a href="/about/" class="hover:text-yellow-500">À propos</a></li>
+                <li><a href="/skills/" class="hover:text-yellow-500">Compétences</a></li>
+                <li><a href="/projects/" class="hover:text-yellow-500">Projets</a></li>
+                <li><a href="/experience/" class="hover:text-yellow-500">Expériences</a></li>
+                <li><a href="/contact/" class="hover:text-yellow-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="mt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 HAJJI ABDERRAZAK. Tous droits réservés.</p>
+            <div class="mt-4">
+                <a href="https://www.linkedin.com/in/abderrazak-hajji-45a2132bb/" class="mx-2 text-yellow-500 hover:text-yellow-400">LinkedIn</a>
+                <a href="https://github.com/abderrazakit" class="mx-2 text-yellow-500 hover:text-yellow-400">GitHub</a>
+                <a href="https://www.credly.com/users/abderrazak-hajji?fbclid=PAY2xjawJ2J7NleHRuA2FlbQIxMQABp1GXBqtesw8XXcqwGDdA-dqAnuTzIfv5Q96aZKsS2iRbZ5DNenmFZv0LWhk8_aem_vj5gw3WQLpws3dywQ3yBUQ" class="mx-2 text-yellow-500 hover:text-yellow-400">Portefeuille de badges</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JS -->
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block title %}À propos{% endblock %}
+
+{% block content %}
+<section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto text-gray-800">
+    
+    <!-- Titre principal -->
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-10 text-center">
+      À propos de moi
+    </h1>
+
+    <!-- Introduction -->
+    <div class="text-lg leading-relaxed mb-12">
+      <p class="mb-4">
+        <span class="inline-flex items-center gap-2 font-semibold text-blue-700">
+          <i data-lucide="user-check" class="w-5 h-5"></i> Bonjour, moi c’est Hajji Abderrazak.
+        </span> Passionné par la cybersécurité et étudiant en 2e année du cycle ingénieur ITIRC à l’ENSA d’Oujda.
+      </p>
+      <p>
+        Mon objectif ? Comprendre les systèmes complexes, repérer leurs faiblesses et participer activement à leur renforcement. Toujours curieux, toujours en quête de solutions.
+      </p>
+    </div>
+
+    <!-- Parcours -->
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+        <i data-lucide="graduation-cap" class="w-6 h-6"></i>Mon parcours
+      </h2>
+      <p class="mb-3">Mon aventure a commencé avec une fascination pour les réseaux et les systèmes. Au fil de mes années à l’ENSA, j’ai développé des compétences solides :</p>
+      <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+        <li>Administration système & Linux</li>
+        <li>Programmation (Python, C++, Java)</li>
+        <li>Analyse de trafic réseau & sécurité</li>
+        <li>Utilisation d’outils comme Wireshark, Snort, Metasploit</li>
+        <li>Pentesting via des environnements virtuels (VirtualBox, AD simulé)</li>
+      </ul>
+    </div>
+
+    <!-- Motivations -->
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+        <i data-lucide="zap" class="w-6 h-6"></i>Ce qui me motive
+      </h2>
+      <p class="mb-2">Ce que j’aime dans ce domaine ? Le défi constant.</p>
+      <p>Chaque système est comme un jeu de logique. Je suis motivé par cette dynamique : apprendre, comprendre, anticiper. Travailler dans ce domaine, c’est s’améliorer en permanence.</p>
+    </div>
+
+    <!-- Objectifs -->
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+        <i data-lucide="target" class="w-6 h-6"></i>Ce que je recherche
+      </h2>
+      <p class="mb-2">Je suis à la recherche d’un stage PFA dans l’un de ces domaines :</p>
+      <ul class="list-disc list-inside ml-4 space-y-1 text-gray-700">
+        <li>Cybersécurité / Audit / Pentest</li>
+        <li>Réseaux et infrastructure sécurisée</li>
+        <li>Développement d’outils de sécurité</li>
+      </ul>
+      <p class="mt-3">Je suis également partant pour rejoindre des <strong>CTFs</strong>, des projets open-source, ou animer des ateliers tech.</p>
+    </div>
+
+    <!-- En dehors de la tech -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-6 h-6"></i>Un peu plus sur moi
+      </h2>
+      <p class="mb-2">J’aime partager mes connaissances : que ce soit à travers des ateliers pour collégiens ou en créant des maquettes pour vulgariser la tech.</p>
+      <p>J’apprécie les projets bien pensés, les interfaces propres, et l’automatisation des tâches. Et j’ai toujours une idée de script ou d’outil en tête !</p>
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center">
+      <p class="text-lg mb-4">📬 Envie de collaborer ou d’échanger ?</p>
+      <a href="/contact/" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg shadow transition">
+        <i data-lucide="mail" class="w-5 h-5"></i> Me contacter
+      </a>
+    </div>
+    
+  </div>
+</section>
+{% endblock %}
