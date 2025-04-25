@@ -8,7 +8,7 @@
         <div class="bg-white p-6 rounded-lg shadow-md">
             <img src="{% static 'portfolio/images/iot.png' %}" alt="{{ project.title }}" class="w-full h-48 object-cover rounded-t-lg">
             <h3 class="text-xl font-semibold mt-4">{{ project.title }}</h3>
-            <p class="text-gray-600">{{ project.description|truncatewords:15 }}</p>
+            <p class="text-gray-600">{{project.description|truncatewords:15}}</p>
             <a href="https://github.com/achrafgetin/projet_iot_itirc25.git" target="_blank">Voir le projet sur GitHub</a>
         </div>
     </div>
