@@ -1,37 +1,146 @@
 {% extends "portfolio/base.html" %}
-{% block title %}Compétences{% endblock %}
+
+{% block title %}Compétences Professionnelles{% endblock %}
+
 {% block content %}
-<section class="container mx-auto py-16 px-6">
-    <h2 class="text-4xl font-semibold text-center mb-6">Mes Compétences</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="text-center">
-            <div class="text-6xl mb-4">
-                <i class="fas fa-code"></i>
+<section class="container mx-auto py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 relative">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">
+                Compétences Techniques
+            </span>
+            <div class="absolute bottom-0 left-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-400 transform -translate-x-1/2 mt-4"></div>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Carte Réseaux -->
+            <div class="skill-card group transform transition-all duration-300 hover:-translate-y-2 bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                <div class="icon-container mb-6">
+                    <div class="gradient-icon mx-auto">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Réseaux Informatiques</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Administration des réseaux
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Diagnostic réseau avancé
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Protocoles TCP/IP, DNS, DHCP
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Analyse Wireshark
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-semibold">Développement Web</h3>
-            <p class="text-lg">HTML, CSS, Django, PHP, C++, JAVA, PYTHON</p>
-        </div>
-        <div class="text-center">
-            <div class="text-6xl mb-4">
-                <i class="fas fa-lock"></i>
+
+            <!-- Carte Cybersécurité -->
+            <div class="skill-card group transform transition-all duration-300 hover:-translate-y-2 bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                <div class="icon-container mb-6">
+                    <div class="gradient-icon mx-auto">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Cybersécurité</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Analyse de vulnérabilités
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Hardening réseau
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Pentesting AD
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-semibold">Cybersécurité</h3>
-            <p class="text-lg">Analyse des vulnérabilités, Sécurisation des réseaux, Active Directory Pentesting</p>
-        </div>
-        <div class="text-center">
-            <div class="text-6xl mb-4">
-                <i class="fas fa-database"></i>
+
+            <!-- Carte Développement -->
+            <div class="skill-card group transform transition-all duration-300 hover:-translate-y-2 bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                <div class="icon-container mb-6">
+                    <div class="gradient-icon mx-auto">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Développement</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        Fullstack (Django/PHP)
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        HTML/CSS modernes
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        Python/Java/C++
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-semibold">Bases de données</h3>
-            <p class="text-lg">SQL, MySQL</p>
-        </div>
-        <div class="text-center">
-            <div class="text-6xl mb-4">
-                <i class="fas fa-cloud"></i>
+
+            <!-- Carte Bases de données -->
+            <div class="skill-card group transform transition-all duration-300 hover:-translate-y-2 bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                <div class="icon-container mb-6">
+                    <div class="gradient-icon mx-auto">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Bases de Données</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        MySQL/MariaDB
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Modélisation SQL
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Optimisation de requêtes
+                    </li>
+                </ul>
             </div>
-            <h3 class="text-xl font-semibold">Cloud & DevOps</h3>
-            <p class="text-lg"></p>
         </div>
     </div>
+
+    <style>
+        .skill-card {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300;
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .gradient-icon {
+            @apply w-16 h-16 rounded-lg flex items-center justify-center text-3xl;
+            background: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .gradient-icon {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .icon-container {
+            position: relative;
+        }
+
+        .icon-container::after {
+            content: '';
+            @apply absolute bottom-0 left-1/2 w-10 h-1 bg-blue-100 rounded-full;
+            transform: translateX(-50%);
+        }
+    </style>
 </section>
 {% endblock %}
