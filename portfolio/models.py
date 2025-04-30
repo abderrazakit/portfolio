@@ -4,7 +4,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='projects/')
-    github_link = models.URLField(default='', blank=True) # Non-nullable avec une valeur par défaut
+    github_link = models.URLField(default='', blank=True)
     demo_link = models.URLField(blank=True)
 
     def __str__(self):
@@ -12,7 +12,7 @@ class Project(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=50)
-    level = models.IntegerField()  # Pourcentage (ex: 80)
+    level = models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -29,8 +29,9 @@ class Experience(models.Model):
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    subject = models.CharField(max_length=200, default='')
     message = models.TextField()
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message de {self.name}"
+        return f"Message de {self.name} - {self.subject}"

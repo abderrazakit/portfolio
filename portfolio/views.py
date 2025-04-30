@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Project, Skill, Experience
+from .models import Project, Skill, Experience, ContactMessage
 from .forms import ContactForm
 from django.core.mail import send_mail
 from django.conf import settings
@@ -29,22 +29,29 @@ def contact(request):
         if form.is_valid():
             contact_instance = form.save()
 
-            # Envoi de l'email
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']  # ✅ Champ récupéré
             message = form.cleaned_data['message']
-            full_message = f"Message de : {name}\nAdresse : {email}\n\nContenu :\n{message}"
 
-            send_mail(
-                subject='Nouveau message de contact depuis le portfolio',
-                message=full_message,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.DEFAULT_FROM_EMAIL],
-                fail_silently=False,
-            )
+            full_message = f"Message de : {name}\nAdresse : {email}\nObjet : {subject}\n\nContenu :\n{message}"
 
-            messages.success(request, "Votre message a bien été envoyé !")
+            try:
+                send_mail(
+                    subject=subject,
+                    message=full_message,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                    fail_silently=False,
+                )
+                messages.success(request, "Votre message a bien été envoyé !")
+            except Exception as e:
+                messages.error(request, f"Une erreur est survenue : {e}")
+
             return redirect('contact')
+        else:
+            messages.error(request, "Veuillez corriger les erreurs dans le formulaire.")
     else:
         form = ContactForm()
+
     return render(request, 'portfolio/contact.html', {'form': form})
