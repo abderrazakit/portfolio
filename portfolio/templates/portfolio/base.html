@@ -2,57 +2,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mon Portfolio{% endblock %}</title>
-    
-    <!-- Liens CSS -->
-    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
-    <!-- Inclure ici une font moderne -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Mon Portfolio{% endblock %}</title>
 
-    <!-- Liens pour d'autres ressources si besoin -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts + Font Awesome + Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    nav {
+      backdrop-filter: blur(10px);
+      background-color: rgba(17, 24, 39, 0.9);
+    }
+
+    nav a {
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    @media (max-width: 1024px) {
+      #menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(17, 24, 39, 0.95);
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      #menu.show {
+        display: flex;
+      }
+
+      #menu li {
+        margin: 0.5rem 0;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #menu-toggle {
+        display: none;
+      }
+
+      #menu {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+      }
+
+      #menu li {
+        margin: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 font-sans">
-    <!-- Navbar -->
-    <nav class="bg-gray-900 text-white p-4 fixed w-full top-0 left-0 shadow-md z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-semibold">HAJJI ABDERRAZAK</a>
-            <ul class="flex space-x-8">
-                <li><a href="/" class="hover:text-yellow-500">Accueil</a></li>
-                <li><a href="/about/" class="hover:text-yellow-500">À propos</a></li>
-                <li><a href="/skills/" class="hover:text-yellow-500">Compétences</a></li>
-                <li><a href="/projects/" class="hover:text-yellow-500">Projets</a></li>
-                <li><a href="/experience/" class="hover:text-yellow-500">Expériences</a></li>
-                <li><a href="/contact/" class="hover:text-yellow-500">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="text-white p-4 fixed w-full top-0 left-0 shadow-md z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-2xl font-semibold">HAJJI ABDERRAZAK</a>
 
-    <main class="mt-20">
-        {% block content %}{% endblock %}
-    </main>
+      <button id="menu-toggle" class="text-white lg:hidden">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 HAJJI ABDERRAZAK. Tous droits réservés.</p>
-            <div class="mt-4">
-                <a href="https://www.linkedin.com/in/abderrazak-hajji-45a2132bb/" class="mx-2 text-yellow-500 hover:text-yellow-400">LinkedIn</a>
-                <a href="https://github.com/achrafgetin/projet_iot_itirc25.git" class="mx-2 text-yellow-500 hover:text-yellow-400">GitHub</a>
-                <a href="https://www.credly.com/users/abderrazak-hajji?fbclid=PAY2xjawJ2J7NleHRuA2FlbQIxMQABp1GXBqtesw8XXcqwGDdA-dqAnuTzIfv5Q96aZKsS2iRbZ5DNenmFZv0LWhk8_aem_vj5gw3WQLpws3dywQ3yBUQ" class="mx-2 text-yellow-500 hover:text-yellow-400">Portefeuille de badges</a>
-            </div>
-        </div>
-    </footer>
+      <ul id="menu" class="items-center">
+        <li><a href="/" class="hover:text-yellow-500">Accueil</a></li>
+        <li><a href="/about/" class="hover:text-yellow-500">À propos</a></li>
+        <li><a href="/skills/" class="hover:text-yellow-500">Compétences</a></li>
+        <li><a href="/projects/" class="hover:text-yellow-500">Projets</a></li>
+        <li><a href="/experience/" class="hover:text-yellow-500">Expériences</a></li>
+        <li><a href="/contact/" class="hover:text-yellow-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Scripts JS -->
-    <script src="{% static 'portfolio/js/main.js' %}"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script>
-  lucide.createIcons();
-</script>
+  <main class="mt-20">
+    {% block content %}{% endblock %}
+  </main>
 
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 mt-10">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 HAJJI ABDERRAZAK. Tous droits réservés.</p>
+      <div class="mt-4">
+        <a href="https://www.linkedin.com/in/abderrazak-hajji-45a2132bb/" class="mx-2 text-yellow-500 hover:text-yellow-400">LinkedIn</a>
+        <a href="https://github.com/achrafgetin/projet_iot_itirc25.git" class="mx-2 text-yellow-500 hover:text-yellow-400">GitHub</a>
+        <a href="https://www.credly.com/users/abderrazak-hajji?fbclid=PAY2xjawJ2J7NleHRuA2FlbQIxMQABp1GXBqtesw8XXcqwGDdA-dqAnuTzIfv5Q96aZKsS2iRbZ5DNenmFZv0LWhk8_aem_vj5gw3WQLpws3dywQ3yBUQ" class="mx-2 text-yellow-500 hover:text-yellow-400">Badges</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="{% static 'portfolio/js/main.js' %}"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+      });
+    });
+  </script>
 </body>
 </html>
