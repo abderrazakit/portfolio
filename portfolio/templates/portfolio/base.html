@@ -1,13 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio professionnel de Hajji Abderrazak - Pentester & développeur" />
+  <meta name="author" content="Hajji Abderrazak" />
   <title>{% block title %}Mon Portfolio{% endblock %}</title>
 
-  <!-- Google Fonts + Font Awesome + Tailwind -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Fonts + Icons + Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -16,94 +18,53 @@
       backdrop-filter: blur(10px);
       background-color: rgba(17, 24, 39, 0.9);
     }
-
-    nav a {
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #facc15;
-    }
-
-    @media (max-width: 1024px) {
-      #menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 64px;
-        right: 0;
-        width: 100%;
-        background-color: rgba(17, 24, 39, 0.95);
-        text-align: center;
-        padding: 1rem 0;
-      }
-
-      #menu.show {
-        display: flex;
-      }
-
-      #menu li {
-        margin: 0.5rem 0;
-      }
-
-      #menu-toggle {
-        display: block;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      #menu-toggle {
-        display: none;
-      }
-
-      #menu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        background: none;
-        padding: 0;
-      }
-
-      #menu li {
-        margin: 0 1rem;
-      }
-    }
   </style>
 </head>
-<body class="bg-gray-50 font-sans">
-  <!-- Navbar -->
-  <nav class="text-white p-4 fixed w-full top-0 left-0 shadow-md z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="/" class="text-2xl font-semibold">HAJJI ABDERRAZAK</a>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-[Poppins]">
 
-      <button id="menu-toggle" class="text-white lg:hidden">
-        <i class="fas fa-bars"></i>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-20 shadow-md text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold tracking-wide">HAJJI ABDERRAZAK</a>
+      <button id="menu-toggle" class="lg:hidden focus:outline-none" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-xl"></i>
       </button>
 
-      <ul id="menu" class="items-center">
-        <li><a href="/" class="hover:text-yellow-500">Accueil</a></li>
-        <li><a href="/about/" class="hover:text-yellow-500">À propos</a></li>
-        <li><a href="/skills/" class="hover:text-yellow-500">Compétences</a></li>
-        <li><a href="/projects/" class="hover:text-yellow-500">Projets</a></li>
-        <li><a href="/experience/" class="hover:text-yellow-500">Expériences</a></li>
-        <li><a href="/contact/" class="hover:text-yellow-500">Contact</a></li>
+      <ul id="menu" class="hidden lg:flex space-x-6 text-base font-medium">
+        <li><a href="/" class="hover:text-yellow-400 transition">Accueil</a></li>
+        <li><a href="/about/" class="hover:text-yellow-400 transition">À propos</a></li>
+        <li><a href="/skills/" class="hover:text-yellow-400 transition">Compétences</a></li>
+        <li><a href="/projects/" class="hover:text-yellow-400 transition">Projets</a></li>
+        <li><a href="/certificats/" class="hover:text-yellow-400 transition">Certifications</a></li>
+        <li><a href="/experience/" class="hover:text-yellow-400 transition">Expériences</a></li>
+        <li><a href="/contact/" class="hover:text-yellow-400 transition">Contact</a></li>
       </ul>
     </div>
+
+    <!-- Menu mobile -->
+    <ul id="menu-mobile" class="lg:hidden hidden flex-col bg-gray-800 mt-4 px-6 py-4 rounded-md space-y-2 text-center">
+      <li><a href="/" class="block hover:text-yellow-400">Accueil</a></li>
+      <li><a href="/about/" class="block hover:text-yellow-400">À propos</a></li>
+      <li><a href="/skills/" class="block hover:text-yellow-400">Compétences</a></li>
+      <li><a href="/projects/" class="block hover:text-yellow-400">Projets</a></li>
+      <li><a href="/certificats/" class="hover:text-yellow-400 transition">Certifications</a></li>
+      <li><a href="/experience/" class="block hover:text-yellow-400">Expériences</a></li>
+      <li><a href="/contact/" class="block hover:text-yellow-400">Contact</a></li>
+    </ul>
   </nav>
 
-  <main class="mt-20">
+  <!-- Main -->
+  <main class="pt-24 px-4">
     {% block content %}{% endblock %}
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-6 mt-10">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 HAJJI ABDERRAZAK. Tous droits réservés.</p>
-      <div class="mt-4">
-        <a href="https://www.linkedin.com/in/abderrazak-hajji-45a2132bb/" class="mx-2 text-yellow-500 hover:text-yellow-400">LinkedIn</a>
-        <a href="https://github.com/achrafgetin/projet_iot_itirc25.git" class="mx-2 text-yellow-500 hover:text-yellow-400">GitHub</a>
-        <a href="https://www.credly.com/users/abderrazak-hajji?fbclid=PAY2xjawJ2J7NleHRuA2FlbQIxMQABp1GXBqtesw8XXcqwGDdA-dqAnuTzIfv5Q96aZKsS2iRbZ5DNenmFZv0LWhk8_aem_vj5gw3WQLpws3dywQ3yBUQ" class="mx-2 text-yellow-500 hover:text-yellow-400">Badges</a>
-      </div>
+  <footer class="bg-gray-900 text-white text-center py-6 mt-20">
+    <p class="text-sm">&copy; 2025 HAJJI ABDERRAZAK. Tous droits réservés.</p>
+    <div class="mt-4 flex justify-center space-x-4 text-yellow-500">
+      <a href="https://www.linkedin.com/in/abderrazak-hajji-45a2132bb/" class="hover:text-yellow-400">LinkedIn</a>
+      <a href="https://github.com/achrafgetin/projet_iot_itirc25.git" class="hover:text-yellow-400">GitHub</a>
+      <a href="https://www.credly.com/users/abderrazak-hajji" class="hover:text-yellow-400">Badges</a>
     </div>
   </footer>
 
@@ -113,12 +74,11 @@
   <script>
     lucide.createIcons();
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('menu');
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('show');
-      });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('menu-mobile');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
   </script>
 </body>

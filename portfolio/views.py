@@ -23,6 +23,10 @@ def experience(request):
     experiences = Experience.objects.all()
     return render(request, 'portfolio/experience.html', {'experiences': experiences})
 
+def certifications(request):
+    return render(request, 'portfolio/certificats.html')
+
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

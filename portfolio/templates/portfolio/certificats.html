@@ -1,0 +1,54 @@
+]{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Certifications{% endblock %}
+
+{% block content %}
+<section class="container mx-auto px-6 md:px-12 lg:px-24 py-12">
+  <h2 class="text-4xl font-bold mb-8 text-yellow-400">Certifications</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- Certificat 1 -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">ETHICAL HACKER</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Certification en tests d'intrusion et évaluation des vulnérabilités.</p>
+      <a href="{% static 'portfolio/files/Ethical_Hacker_Certif.pdf' %}" target="_blank" 
+         class="text-yellow-400 hover:text-yellow-500 underline">Voir le certificat</a>
+    </div>
+
+    <!-- Certificat 2 -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">CCNA</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Certification CCNAv7: Introduction to Networks.</p>
+      <a href="{% static 'portfolio/files/CCNA_Certif.pdf' %}" target="_blank" 
+         class="text-yellow-400 hover:text-yellow-500 underline">Voir le certificat</a>
+    </div>
+     <!-- Certificat 3 -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">PYTHON</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Certification Python Data Structures</p>
+      <a href="{% static 'portfolio/files/Python_Certif.pdf' %}" target="_blank" 
+         class="text-yellow-400 hover:text-yellow-500 underline">Voir le certificat</a>
+    </div>
+     <!-- Certificat 4 -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">IoT</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Certification Introduction à l’IoT et à la 
+transformation digitale.</p>
+      <a href="{% static 'portfolio/files/IoT_Certif.pdf' %}" target="_blank" 
+         class="text-yellow-400 hover:text-yellow-500 underline">Voir le certificat</a>
+    </div>
+    <!-- Certificat 5 -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-2">NÉGOCIATION</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Attestation de Formation : Comprendre et Gérer les Positions de Vie en Négociation</p>
+      <a href="{% static 'portfolio/files/DevPer_Certif.pdf' %}" target="_blank" 
+         class="text-yellow-400 hover:text-yellow-500 underline">Voir le certificat</a>
+    </div>
+
+    <!-- Tu peux ajouter plus de certificats ici -->
+
+  </div>
+</section>
+{% endblock %}
