@@ -143,3 +143,5 @@ EMAIL_HOST_USER = 'abderrazak.hajji.23@ump.ac.ma'  # Ton Gmail
 EMAIL_HOST_PASSWORD = 'kbjn iszy wtxf ohpl'  # Ton mot de passe d'application
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+
+

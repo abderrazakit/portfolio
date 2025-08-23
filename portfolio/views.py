@@ -59,3 +59,5 @@ def contact(request):
         form = ContactForm()
 
     return render(request, 'portfolio/contact.html', {'form': form})
+
+
